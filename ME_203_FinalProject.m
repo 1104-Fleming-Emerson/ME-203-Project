@@ -8,27 +8,22 @@ clc; clear all; format compact;
 
 %% Project 1
 % task 1
-OPlayer = 'O';
-XPlayer = 'X';
 empty = NaN;
 Board = zeros(3,3);
 Board(:,:) = empty;
 
-Player1 = input('Xs or Os?\n', 's');
-if Player1 == 'X'
-    Player1 = XPlayer
-    Player2 = OPlayer
-elseif Player1 == 'O'
-        Player1 = OPlayer
-        Player2 = XPlayer
-end
-    
+Player = input('Pick Player 1 or Player 2 (1 or 2)\n');
 
 while sum(isnan(Board(:))) > 0
+    
     row = input('choose your row: \n');
     column = input('choose your column: \n');
-    
-    Board(row,column) = char(Player1);
-    Board
-    
+    isnan(Board(row,column))
+
+    if isnan(Board(row,column))
+        Board(row,column) = Player
+        
+    else
+        fprintf('That square has already been played.')
+    end
 end
