@@ -25,9 +25,10 @@ end
     
 
 while sum(isnan(Board(:))) > 0
-    cac = inputdlg('Pick your position:(_,_) \n');
-    num = str2num( cac{:} )
+    row = input('choose your row: \n');
+    column = input('choose your column: \n');
     
-    Board(num) = Player1
+    Board(row,column) = char(Player1);
+    Board
     
 end
