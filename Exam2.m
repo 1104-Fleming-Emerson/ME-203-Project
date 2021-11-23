@@ -1,16 +1,17 @@
 % Brandon Ramirez Lopez, Gabriel Ritch, Emerson Fleming
 % ME 203
 % Exam 2
-clc clear all, format compact
+clc, clear all, format compact
 %% Question 1
 syms x1 x2 x3 x4 x5
+% Write out each equations
 eqn1=-5*x1+6*x2+7*x3+8*x5==6;
 eqn2=4*x1+5*x2+6*x3+2*x4==1;
 eqn3=-5*x1-3*x2+3*x3+5*x4+2*x5==8;
 eqn4=x1-5*x2+4*x3+11*x4+9*x5==56;
 eqn5=8*x1+8*x2+3*x3+7*x4+x5==13;
 [A,B]=equationsToMatrix([eqn1,eqn2,eqn3,eqn4,eqn5]);,[x1,x2,x3,x4,x5];
-V=linsolve(A,B)
+Solution1=linsolve(A,B)
 % Question 1 soultion 2
 A2=[-5,6,7,0,8;4,5,6,2,0;-5,-3,3,5,2;1,-5,4,11,9;8,8,3,7,1];
 B2=[6;1;8;56;13];
@@ -39,13 +40,17 @@ Ax=polyval(A,x)
 Bx=polyval(B,x)
 
 % Part 3--find C=A*B
-C=Ax.*Bx
+syms x
+A3=5*x^5+8*x^4+x^3+x+6;
+B3=4*x^3+8*x^2+2;
+C=expand(A3*B3)
 
 % Part 4--find D=A/B and remainder r
 %since we are finding remainder, round down with floor() when finding quotient D
-D=floor(Ax./Bx) 
 %use rem()function to find remainder of quotient A/B
-r=rem(Ax,Bx)
+[r,D]=polynomialReduce(A3,B3)
+D
+r
 %% Question 3
 wants_to_play = 1;
 
@@ -164,9 +169,10 @@ end
 A=input('Enter value for A: ')
 b=input('Enter value for b: ')
 Wn=input('Enter value for Wn: ')
-t=[0:.01:10];
+%t=[0:.01:10];
 % Amplitude equation
-Amp=A.*exp(b.*t).*cos(Wn.*t)
+Amp=A.*exp(b.*t).*cos(Wn.*t);
+
 % Parts 2 and 3--switch case to find and graph amplitude
 if b<0
     b='less than zero'
@@ -177,12 +183,10 @@ elseif b>0
 end
 switch b
     case 'less than zero'
-        while Amp>abs(40)
-            break
+        while t>=0
+            t=t+.01
+            if Amp>40
+            break 
+            end
         end
-        Amp
-    case 'zero'
-        disp('two')
-    case 'greater than zero'
-        disp('three')
 end
