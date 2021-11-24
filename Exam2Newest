@@ -202,7 +202,7 @@ switch b
         ylabel('Amplitude')
     case {'zero'}
         ti=0;
-        tf=25*(1/Wn);
+        tf=25*2*pi*(1/Wn);
         t=linspace(ti,tf,1000);
         Amp=A.*cos(Wn.*t);
         figure(2)
