@@ -105,7 +105,7 @@ g=ExamF(x,y);
 %givens:
 % set 1
 xi = -2:0.01:8;
-yi = 0.025:0.001:1000;
+yi = 0.25:0.01:100;
 n = min(size(xi,1), size(yi,1));
 m = min(size(xi,2), size(yi,2));
 x=xi(1:n,1:m);
