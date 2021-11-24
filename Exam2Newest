@@ -129,43 +129,6 @@ fprintf('The dimensions of f1 is %d row by %d columns\n',rows1,columns1)
 
 fprintf('The dimensions of f2 is %d row by %d columns\n',rows2,columns2)
 %% Question 6
-% Part 1--user input commands for A,b,Wn
-A=input('Enter value for A: ')
-b=input('Enter value for b: ')
-Wn=input('Enter value for Wn: ')
-t=[0:.01:10]
-% Amplitude equation
-Amp=A.*exp(b.*t).*cos(Wn.*t)
-% Parts 2 and 3--switch case to find and graph amplitude
-switch b
-    case {b<0}
-        t=0;
-        while t>=0
-            Amp=A*exp(b*t)*cos(Wn*t);
-            Amp>=-40;
-            Amp<=40;
-        end
-        figure(1)
-        plot(t,Amp)
-        title('Amplitude for b<0')
-        xlabel('t')
-        ylabel('Amplitude')
-    case {b==0}
-        t=linspace(0,tf,1000);
-        figure(2)
-        plot(t,Amp)
-        title('Amplitude for b=0')
-        xlabel('t')
-        ylabel('Amplitude')
-    case {b>0}
-        t=linspace(0,tf,1000);
-        figure(3)
-        plot(t,Amp)
-        title('Amplitude for b>0')
-        xlabel('t')
-        ylabel('Amplitude')
-end
-%% Question 6 edited
 A=input('Enter value for A: ')
 b=input('Enter value for b: ')
 Wn=input('Enter value for Wn: ')
@@ -173,14 +136,14 @@ Wn=input('Enter value for Wn: ')
 % at t=0, Amp=A
 % Parts 2 and 3--switch case to find and graph amplitude
 if b<0
-    b='less than zero'
+    bcase='less than zero'
 elseif b==0
-    b='zero'
+    bcase='zero'
 elseif b>0
-    b='greater than zero'
+    bcase='greater than zero'
 end
 
-switch b
+switch bcase
     case {'less than zero'}
         t=0;
         while t>=0
