@@ -182,30 +182,24 @@ end
 
 switch b
     case {'less than zero'}
-        ti=0;
-        tf=1000;
-        t=linspace(ti,tf,1000);
-        Amp=A.*exp(b.*t).*cos(Wn.*t);
-        while Amp<=40
-            figure(1)
-            plot(t,Amp)
-            title('Amplitude versus time, b<0')
-            xlabel('time')
-            ylabel('Amplitude')
-            if Amp>40
+        t=0;
+        while t>=0
+            t=t+1;
+            Amp=A.*exp(b.*t).*cos(Wn.*t);
+            if Amp>=40
                 break
+                disp(t)
+                disp(Amp)
+            elseif Amp<=-40
+                break
+                disp(t)
+                disp(Amp)
             end
         end
-        while Amp>=-40
-            figure(1)
-            plot(t,Amp)
-            title('Amplitude versus time, b<0')
-            xlabel('time')
-            ylabel('Amplitude')
-            if Amp<-40
-                break
-            end
-        end
+        plot(t,Amp)
+        title('Amplitude versus time, b<0')
+        xlabel('time')
+        ylabel('Amplitude')
     case {'zero'}
         ti=0;
         tf=25*(1/Wn);
@@ -217,10 +211,20 @@ switch b
         xlabel('time')
         ylabel('Amplitude')
     case {'greater than zero'}
-        ti=0;
-        tf=(1/Wn);
-        t=linspace(ti,tf,1000);
-        Amp=A.exp(b.*t)*cos(Wn.*t);
+        t=0;
+        while t>=0
+            t=t+1;
+            Amp=A.*exp(b.*t).*cos(Wn.*t);
+            if Amp>=40
+                break
+                disp(t)
+                disp(Amp)
+            elseif Amp<=-40
+                break
+                disp(t)
+                disp(Amp)
+            end
+        end
         figure(3)
         plot(t,Amp)
         title('Amplitude versus time, b>0')
