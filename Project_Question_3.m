@@ -1,8 +1,8 @@
 % Brandon Ramirez Lopez
 % Question Three
 clc,clear all,format compact
-S="Thor"'
+S="Thor";
 d=get_words_BR(S);
-data=d'
+data=d;
 Output=remove_delim_BR(data)
-
+p=clean_words_BR(Output)
