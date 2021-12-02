@@ -5,4 +5,5 @@ S="Thor";
 d=get_words_BR(S);
 data=d;
 Output=remove_delim_BR(data);
-dataclean=clean_words_BR(Output)
+data_filtered=clean_words_BR(Output);
+[barx,count]=categorizes_words_BR(data_filtered)
