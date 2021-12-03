@@ -21,7 +21,7 @@ elseif S=="Ironman"
     FID=fopen("Tony_Stark.txt");
     data= textscan(FID,'%s');%scan through the file for each word;
     fclose(FID);
-else S=="CaptinAmerica"
+else S== "CaptinAmerica"
     FID=fopen("Steve_Rogers.txt");
     data= textscan(FID,'%s');%scan through the file for each word;
     fclose(FID);
