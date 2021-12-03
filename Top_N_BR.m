@@ -2,7 +2,7 @@ function [TOP,subcount]=Top_N_BR(count,barx,N)
 %This funtion takes the number of words desires 'N',the words in the array
 %'barx', and the number of times the word appears 'count' and then sorts
 %them from most common word to least common word 'TOP' and the number of
-%times they appear 'subcount' showing only the input of 'N'
+%times they appear 'subcount'
 TOP_N=maxk(count,N);
 i=0;
 while i<length(TOP_N)
