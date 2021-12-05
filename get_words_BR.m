@@ -5,23 +5,23 @@ if S=="Thor"
     FID=fopen("Thor.txt");
     data= textscan(FID,'%s');%scan through the file for each word;
     fclose(FID); %close the file
-elseif S=="Hulk"
+elseif S=="Hulk"|S=="Bruce Banner"
     FID=fopen("Bruce_Banner.txt");
     data= textscan(FID,'%s');%scan through the file for each word;
     fclose(FID);
-elseif S=="Eyepatch"
+elseif S=="Nick Fury"
     FID=fopen("Nick_Fury.txt");
     data= textscan(FID,'%s')%scan through the file for each word;
     fclose(FID);
-elseif S=="Blackwidow"
+elseif S=="Black widow"|S=="Natasha Romanoff"
     FID=fopen("Natasha_Romanoff.txt");
     data= textscan(FID,'%s');%scan through the file for each word;
     fclose(FID);
-elseif S=="Ironman"
+elseif S=="Iron man"|S=="Tony Stark"
     FID=fopen("Tony_Stark.txt");
     data= textscan(FID,'%s');%scan through the file for each word;
     fclose(FID);
-else S== "CaptinAmerica"
+else S== "Captin America"|S=="Steve Roger"
     FID=fopen("Steve_Rogers.txt");
     data= textscan(FID,'%s');%scan through the file for each word;
     fclose(FID);
