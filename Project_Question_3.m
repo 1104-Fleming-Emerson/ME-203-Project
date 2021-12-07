@@ -98,5 +98,3 @@ switch Hero
         title('Hulk')
     otherwise disp('Incorrect name run again')
 end
-
-
