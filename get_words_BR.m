@@ -1,4 +1,4 @@
-function data=get_words_BR(S)
+function data=get_words_BR(S);
 % data=GETWORDS(hero)
 % This function gets the words from a .txt file and stores them as an array
 if S=="Thor"
@@ -25,7 +25,7 @@ elseif S=="Hawk eye"|S=="Clint Barton"
     FID=fopen("Clint_Barton.txt");
     data= textscan(FID,'%s');%scan through the file for each word;
     fclose(FID);
-else S== "Captin America"|S=="Steve Roger"
+else S== "Captin America"|S=="Steve Roger";
     FID=fopen("Steve_Rogers.txt");
     data= textscan(FID,'%s');%scan through the file for each word;
     fclose(FID);
