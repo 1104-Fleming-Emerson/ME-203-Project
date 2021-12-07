@@ -1,4 +1,5 @@
-% Brandon Ramirez Lopez
+% Brandon Ramirez Lopez, Emerson Fleming, Gabriel Ritch
+% ME 203 Project
 % Question Three
 clc,clear all,format compact
 Hero = input('Choose Hero name:\n');
